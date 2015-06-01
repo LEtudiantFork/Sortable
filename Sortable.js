@@ -229,6 +229,8 @@
 		constructor: Sortable,
 
 		_onTapStart: function (/** Event|TouchEvent */evt) {
+			evt.stopPropagation();
+
 			var _this = this,
 				el = this.el,
 				options = this.options,
@@ -437,7 +439,6 @@
 				evt.preventDefault();
 			}
 		},
-
 
 		_onDragStart: function (/**Event*/evt, /**boolean*/useFallback) {
 			var dataTransfer = evt.dataTransfer,
@@ -734,7 +735,6 @@
 			}
 		},
 
-
 		handleEvent: function (/**Event*/evt) {
 			var type = evt.type;
 
@@ -748,7 +748,6 @@
 				this._onDrop(evt);
 			}
 		},
-
 
 		/**
 		 * Serializes the item into an array of string.
